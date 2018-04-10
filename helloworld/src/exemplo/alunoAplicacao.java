@@ -24,5 +24,6 @@ public class alunoAplicacao {
 		System.out.println(joao.getMatricula());
 		System.out.println(joao.getNome());
 		System.out.println(joao.getEmail());
+		System.out.println(joao);
 	}
 }
