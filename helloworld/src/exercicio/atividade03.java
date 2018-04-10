@@ -23,7 +23,7 @@ public class atividade03 {
 	            }
 	        } while(num > 0); 
 	        
-	        System.out.println("A soma é " + soma); // soma
+	        System.out.println("A soma é " + soma); 
 	      
 	    }
 

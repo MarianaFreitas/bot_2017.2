@@ -25,5 +25,12 @@ public class alunoAplicacao {
 		System.out.println(joao.getNome());
 		System.out.println(joao.getEmail());
 		System.out.println(joao);
+		
+		//criação da referencia e instancia utilizando o construtor com argumentos(cheio)
+		Aluno maria = new Aluno(1234, "Maria da Silva", "maria@gmail.com");
+		
+		//imprimindo os dados usando o toString
+		System.out.println(maria);
 	}
+	
 }
