@@ -14,8 +14,10 @@ import java.util.Scanner;
 
 public class atividade02 {
 
+	private static Scanner ent;
+
 	public static void main(String[] args) {
-		 Scanner ent = new Scanner(System.in);
+		 ent = new Scanner(System.in);
 	        int nota1, nota2, nota3;
 	        int media, i, contAluno = 0;
 	        

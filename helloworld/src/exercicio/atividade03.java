@@ -3,12 +3,15 @@ package exercicio;
 import java.util.Scanner;
 
 public class atividade03 {
-	  public static void main(String[] args){
+	  private static Scanner ent;
+	private static int cont;
+
+	public static void main(String[] args){
 	       
-		  Scanner ent = new Scanner(System.in);
+		  ent = new Scanner(System.in);
 	        
 	        double num, soma = 0;
-	        int cont = 0;
+	        setCont(0);
 	        
 	        do{
 	            System.out.println("Digite um número");
@@ -16,12 +19,20 @@ public class atividade03 {
 	            
 	            if(num >= 0){ 
 	                soma = num + soma; 
-	                cont++; 
+	                setCont(getCont() + 1); 
 	            }
 	        } while(num > 0); 
 	        
 	        System.out.println("A soma é " + soma); // soma
 	      
 	    }
+
+	public static int getCont() {
+		return cont;
+	}
+
+	public static void setCont(int cont) {
+		atividade03.cont = cont;
+	}
 	}
 
