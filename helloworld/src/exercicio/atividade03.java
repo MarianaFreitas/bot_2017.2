@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class atividade03 {
 	  private static Scanner ent;
-	private static int cont;
+	  private static int cont;
 
 	public static void main(String[] args){
 	       
@@ -34,5 +34,5 @@ public class atividade03 {
 	public static void setCont(int cont) {
 		atividade03.cont = cont;
 	}
-	}
+}
 
