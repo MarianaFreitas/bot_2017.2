@@ -15,8 +15,26 @@ public class Dao {
 	public void abrirConexao()throws Exception{
 		//definir a classe que atua como drive
 		//de conexão entre o java e o mysql
-		Class.forName("com.mysql.jbdc.Driver");
-		conn = DriverManager.getConnection("jbdc:mysql//localhost:3306/projeto1",root,"");
+		Class.forName("com.mysql.jdbc.Driver");
+		conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/projeto1","root","");
 	}
+	
+	public void fecharConexao()throws Exception{
+		conn.close();
+	}
+	
+	public static void main(String[] args) {
+		//criar variável do tipo Dao
+		Dao d = new Dao();
+		try {
+			d.abrirConexao();
+			d.fecharConexao();
+			System.out.println("Conectei!...");
+		} catch (Exception e) {
+			System.out.println("Deu Ruim!...");
+			e.printStackTrace();
+		}
+	}
+	
 	
 }

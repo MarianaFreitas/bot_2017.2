@@ -20,7 +20,7 @@
 	<!-- Formas de transporte de dados HTTP.
 	GET(default)- Transporte vai pela URL, mais rápido, não é seguro e tem limite...2kb...
 	POST - Transporte de forma oculta. Mais seguro e sem limite de quantidade de dados... -->
-	<form action="" method="post">
+	<form action="ControleCliente" method="post">
 	Nome:<br>
 	<input type="text" name="nome" size="30"/>
 	<br><br>
