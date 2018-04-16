@@ -1,7 +1,11 @@
 package controle;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,6 +33,9 @@ public class ControleCliente extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String msg = null;
+		
 		try {//objeto criado e os dados da tela, são inseridos no objeto
 			Cliente cli = new Cliente(null,
 					request.getParameter("nome"),
@@ -39,9 +46,20 @@ public class ControleCliente extends HttpServlet {
 			ClienteDao cd = new ClienteDao();
 			cd.inserir(cli);
 			
+			msg = "Cliente Cadastrado com Sucesso!";
+			
 		} catch (Exception e) {
-			e.getMessage();
+			msg = "Erro : "+e.getMessage();
+			e.printStackTrace();
 		}
+		
+		//criar um atributo mensagem
+		request.setAttribute("mensagem", msg);
+		
+		//redirecionar a navegação para index.jsp enviando o objeto
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+
 	}
 
+	
 }

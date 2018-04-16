@@ -14,5 +14,14 @@
 	<a href="#">Consulta Cliente</a>
 	<br>
 	
+	<% 
+	//request.getAttribute()   retorna um objeto
+	
+	String mensagem = (String) request.getAttribute("mensagem");
+	if(mensagem != null){
+		out.print(mensagem);
+	}
+	%>
+
 </body>
 </html>
