@@ -3,7 +3,6 @@ package entity;
 public class Professor extends Pessoa{
 
 	private Double salario;
-	private String turno;
 	//agregação
 	private Especializacao titulo;
 	
@@ -47,7 +46,7 @@ public class Professor extends Pessoa{
 	public String geraPerfil() {
 		return super.geraPerfil()
 				+ "\nSalário: " + salario
-				+ "\nTurno: " + turno
+				+ "\nTurno: " + getTurno()
 				+ "\nEspecialização: " + titulo;
 	}
 

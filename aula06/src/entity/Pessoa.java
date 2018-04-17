@@ -7,6 +7,7 @@ public abstract class Pessoa {
 	protected String matricula;
 	protected String nome;
 	protected String email;
+	protected String turno;
 	
 	
 	public Pessoa() {
@@ -28,8 +29,8 @@ public abstract class Pessoa {
 	}
 
 
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
+	public void setMatricula(String i) {
+		this.matricula = i;
 	}
 
 
@@ -102,5 +103,18 @@ public abstract class Pessoa {
 	@Override
 	public String toString() {
 		return geraPerfil();
+	}
+
+	public String geraMedia() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getTurno() {
+		return turno;
+	}
+
+	public void setTurno(String turno) {
+		this.turno = turno;
 	}
 }
