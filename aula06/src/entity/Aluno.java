@@ -1,52 +1,47 @@
 package entity;
 
-public abstract class Aluno extends Pessoa{
+import java.text.DecimalFormat;
 
-	private Double nota1;
-	private Double nota2;
-	
+public abstract class Aluno extends Pessoa {
+
+	protected Double nota01;
+	protected Double nota02;
 
 	public Aluno() {
-		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	public Double getNota1() {
-		return nota1;
-	}
 
-	public Double getNota2() {
-		return nota2;
-	}
-
-	public void setNota2(Double nota2) {
-		this.nota2 = nota2;
-	}
-
-	public void setNota1(Double nota1) {
-		this.nota1 = nota1;
-	}
-
-	
-public Aluno(Integer id,String matricula,String nome,String email,String turno,Double nota1, Double nota2) {
+	public Aluno(Integer id, String matricula, String nome, String email, String turno, Double nota01, Double nota02) {
 		super(id, matricula, nome, email, turno);
-		this.nota1 = nota1;
-		this.nota2 = nota2;
+		this.nota01 = nota01;
+		this.nota02 = nota02;
 	}
 
-public String geraPerfil() {
-		
-		return "Os dados são:\n"
-				+ "\nMatricula: " + matricula
-				+ "\nNome: " + nome
-				+ "\nEmail: " + email
-				+ "\nNota1: "+ nota1
-				+ "\nNota2: "+ nota2
-				+ "\nTurno: "+ turno;
+	public Double getNota01() {
+		return nota01;
+	}
+
+	public void setNota01(Double nota01) {
+		this.nota01 = nota01;
+	}
+
+	public Double getNota02() {
+		return nota02;
+	}
+
+	public void setNota02(Double nota02) {
+		this.nota02 = nota02;
+	}
+
+	protected Double getMedia() {
+		return (nota01 + nota02) / 2;
 	}
 
 	@Override
-	public String toString() {
-		return geraPerfil();
+	protected String geraPerfil() {
+		DecimalFormat df = new DecimalFormat("0.00");
+		return super.geraPerfil() + "\nMÃ©dia: " + df.format(getMedia());
 	}
+	
+	
 }
