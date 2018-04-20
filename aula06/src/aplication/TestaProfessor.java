@@ -1,24 +1,35 @@
 package aplication;
 
+import entity.Endereco;
 import entity.Especializacao;
 import entity.Professor;
 
 public class TestaProfessor {
-
 	public static void main(String[] args) {
-		
+
 		Professor prof = new Professor();
 		Especializacao esp = new Especializacao();
 		
 		prof.setNome("Luis Paulo");
-		prof.setEmail("lpjunior@g,ail.com");
+		prof.setEmail("lpjunior@gmail.com");
 		prof.setMatricula("prf001");
-		prof.setSalario(100000.);
-	    prof.setTurno("Manh�/Noite");
+		prof.setSalario(1000000.);
+		prof.setTurno("Manhã|Noite");
 		
-		esp.setTitulo("Mestrando Eng. Computa��o");
+		// Definindo a especialização no obj da classe Especialização
+		esp.setTitulo("Mestrando Eng. Computação");
 		
-		prof.setTitulo(esp);
+		// associando a classe professor
+		prof.setEspecializacao(esp);
+
+		// Atribuindo a instancia de endereço ao obj de prof
+		prof.setEndereco(new Endereco());
+		
+		prof.getEndereco().setId(123);
+		prof.getEndereco().setLogradouro("Rua 0");
+		prof.getEndereco().setBairro("Centro");
+		prof.getEndereco().setCidade("Rio de Janeiro");
+		prof.getEndereco().setCep("21000-000");
 		
 		System.out.println(prof);
 	}
