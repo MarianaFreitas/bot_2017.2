@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Página Inicial</title>
+<title>PÃ¡gina Inicial</title>
 </head>
 <body>
-	<h3>Aplicação em JSP e Servlet com JBDC</h3>
+	<h3>AplicaÃ§Ã£o em JSP e Servlet com JBDC</h3>
 	<hr>
 	<a href="cadastro.jsp">Cadastro de Cliente</a>
 	<br>
-	<a href="#">Consulta Cliente</a>
+	<a href="ControleCliente">Consulta Cliente</a>
 	<br>
 	
 	<% 
