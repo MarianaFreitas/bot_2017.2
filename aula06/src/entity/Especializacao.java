@@ -4,11 +4,12 @@ public class Especializacao {
 
 	private Integer id;
 	private String titulo;
-	//composição
+	
+	// composiÃ§Ã£o
 	private Professor professor;
-
+	
 	public Especializacao() {
-		
+
 	}
 
 	public Integer getId() {
