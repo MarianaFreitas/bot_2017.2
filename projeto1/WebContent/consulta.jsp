@@ -4,10 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Consulta</title>
 </head>
 <body>
-<h3>Cadastro de Cliente</h3>
+<h3>Consulta de Cliente</h3>
 <hr>
 <a href="index.jsp">Inicial</a>
 &nbsp; |&nbsp;
