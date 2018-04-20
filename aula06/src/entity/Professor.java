@@ -1,60 +1,42 @@
 package entity;
 
-public class Professor extends Pessoa{
+public class Professor extends Pessoa {
 
 	private Double salario;
-	//agregaÁ„o
-	private Especializacao titulo;
-	
-	
+	// Agrega√ß√£o
+	private Especializacao especializacao;
+
 	public Professor() {
-		super();
-		// TODO Auto-generated constructor stub
+
 	}
 
+	public Professor(Integer id, String matricula, String nome, String email, String turno, Double salario,
+			Especializacao especializacao) {
+		super(id, matricula, nome, email, turno);
+		this.salario = salario;
+		this.especializacao = especializacao;
+	}
 
 	public Double getSalario() {
 		return salario;
 	}
 
-
-	public void setSalario(Double i) {
-		this.salario = i;
+	public void setSalario(Double salario) {
+		this.salario = salario;
 	}
 
-
-	public String getTurno() {
-		return turno;
+	public Especializacao getEspecializacao() {
+		return especializacao;
 	}
 
-
-	public void setTurno(String turno) {
-		this.turno = turno;
+	public void setEspecializacao(Especializacao especializacao) {
+		this.especializacao = especializacao;
 	}
-
-
-	public Especializacao getTitulo() {
-		return titulo;
-	}
-
-
-	public void setTitulo(Especializacao titulo) {
-		this.titulo = titulo;
-	}
-	
-	@Override
-	public String geraPerfil() {
-		return super.geraPerfil()
-				+ "\nSal·rio: " + salario
-				+ "\nTurno: " + getTurno()
-				+ "\nEspecializaÁ„o: " + titulo;
-	}
-
 
 	@Override
-	public String toString() {
-		return geraPerfil();
+	protected String geraPerfil() {
+		return super.geraPerfil() + 
+				"\nSal√°rio: " + salario + 
+				"\nEspecializa√ß√£o: " + especializacao;
 	}
-	
-	
 }
