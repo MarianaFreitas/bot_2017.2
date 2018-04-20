@@ -28,7 +28,17 @@ public class ControleCliente extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+	try {
+		ClienteDao cd = new ClienteDao();
+		List<Cliente> listaCliente = cd.consultarClientes();
+		request.setAttribute("clientes", listaCliente);
+		request.getRequestDispatcher("consulta.jsp").forward(request, response);
+		
+		} catch (Exception e) {
+			e.printStackTrace();//mostra linha que deu erro
+			request.setAttribute("mensagem", "Erro: "+e.getMessage());
+			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}
 	}
 
 	
@@ -36,7 +46,7 @@ public class ControleCliente extends HttpServlet {
 		
 		String msg = null;
 		
-		try {//objeto criado e os dados da tela, s„o inseridos no objeto
+		try {//objeto criado e os dados da tela, s√£o inseridos no objeto
 			Cliente cli = new Cliente(null,
 					request.getParameter("nome"),
 					request.getParameter("email"),
@@ -56,7 +66,7 @@ public class ControleCliente extends HttpServlet {
 		//criar um atributo mensagem
 		request.setAttribute("mensagem", msg);
 		
-		//redirecionar a navegaÁ„o para index.jsp enviando o objeto
+		//redirecionar a navega√ß√£o para index.jsp enviando o objeto
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}
