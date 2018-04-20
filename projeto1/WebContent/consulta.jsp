@@ -1,3 +1,5 @@
+<%@page import="entidade.Cliente" %>
+<%@page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -16,4 +18,15 @@
 <a href="ControleCliente">Consulta</a>
 &nbsp; |&nbsp;
 </body>
+<%
+
+List<Cliente> listacli =(List<Cliente>)request.getAttribute("clientes");
+for(Cliente c: listacli){
+%>
+<ul>
+
+<li><%= c.toString() %></li>
+
+</ul>
+<% } %>
 </html>
