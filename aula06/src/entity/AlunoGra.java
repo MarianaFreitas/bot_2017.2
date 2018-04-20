@@ -1,55 +1,35 @@
 package entity;
 
-public class AlunoGra extends Aluno{
+public class AlunoGra extends Aluno {
 
-	private int periodo;
-	private static Double nota2;
-	private static Double nota1;
-	private static double Media;
+	private Integer periodo;
 
-	public int getPeriodo() {
+	public AlunoGra() {
+
+	}
+
+	public AlunoGra(Integer id, String matricula, String nome, String email, String turno, Double nota01, Double nota02,
+			Integer periodo) {
+		super(id, matricula, nome, email, turno, nota01, nota02);
+		this.periodo = periodo;
+	}
+
+	public Integer getPeriodo() {
 		return periodo;
 	}
 
-	public void setPeriodo(int periodo) {
+	public void setPeriodo(Integer periodo) {
 		this.periodo = periodo;
-	}
-	
-	public String geraMedia() {
-		return super.geraMedia()
-				+ "\nNota1: " + getNota1()
-				+ "\nNota2: " + getNota2()
-				+ "\nTurno: " + getTurno();
-	}
-	
-	public static void Media(String[] args) {
-	 nota1 = null;
-	 nota2 = null;
-	 
-	Media((nota1 + nota2) / 2);
-	}
-	
-	private static void Media(double d) {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
-	public String toString() {
-		return geraMedia();
+	protected Double getMedia() {
+		return ((nota01 * 1) + (nota02 * 2)) / (1 + 2);
 	}
-
-	public static double getMedia() {
-		return Media;
-	}
-
-	public static void setMedia(double media) {
-		Media = media;
-	}
-
-	public void setNota1(double d) {
+	
+	@Override
+	protected String geraPerfil() {
 		// TODO Auto-generated method stub
-		
+		return super.geraPerfil() + "\nPeriodo: " + periodo;
 	}
-
 }
