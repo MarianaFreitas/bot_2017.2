@@ -6,10 +6,10 @@ import java.util.List;
 import entidade.Cliente;
 
 public class ClienteDao extends Dao{
-	//mÈtodo para inserir
+	//m√©todo para inserir
 	public void inserir(Cliente c) throws Exception{
 		//abrir o banco de dados 
-		abrirConexao();
+		AbrirConexao();
 		stmt = conn.prepareStatement("insert into cliente values(null,?,?,?,?)");
 		stmt.setString(1, c.getNome());
 		stmt.setString(2, c.getEmail());
@@ -20,15 +20,15 @@ public class ClienteDao extends Dao{
 		stmt.execute();
 		stmt.close();
 		
-		//fechar conex„o com banco de dados
+		//fechar conex√£o com banco de dados
 		fecharConexao();
 	}
 	
-	//mÈtodo para lista
+	//m√©todo para lista
 	
 	public List<Cliente> consultarCliente()throws Exception{
 		
-		abrirConexao();
+		AbrirConexao();
 		
 		stmt = conn.prepareStatement("select * from cliente");
 		rs = stmt.executeQuery();
@@ -50,5 +50,5 @@ public class ClienteDao extends Dao{
 		
 	}
 	
-	//mÈtodo para excluir
+	//m√©todo para excluir
 }
